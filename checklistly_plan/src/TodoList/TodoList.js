@@ -4,6 +4,20 @@ function TodoList({ user }) {
 
 const [todo, setTodo] = useState("");
 
+// List of existing Todos that will be displayed in the "My tasks" container
+const [todos, setTodos] = useState([
+  {text: "Do laundry", id:1, completed: false },
+  {text: "Go Grocery Shopping", id:1, completed: false },
+  {text: "Finish ALX assignments", id:1, completed: false },
+  {text: "File company taxes", id:1, completed: false },
+]);
+
+// This function adds a new Todo task onto the exisiting todos
+const handleAdd = () => {
+  setTodos([...todos, { text: todo, id: Date.now(), completed: false }]);
+    setTodo("");
+};
+
   return (
     <div>
       <h2>{user}'s Todo List</h2>
@@ -13,7 +27,18 @@ const [todo, setTodo] = useState("");
       value={todo}
       onChange={(e) => setTodo(e.target.value)}
       />
-      <button>Add task</button>
+      <button onClick={handleAdd}>Add task</button>
+      {/* static way of listing items in My tasks container */}
+      <ul className='container'>
+        <h2>My Tasks</h2>
+        <div className='list-container'>
+          <li>Do laundry</li><button>Remove</button>
+          <li>Go Grocery shopping</li><button>Remove</button>
+          <li>Finish ALX assignments</li><button>Remove</button>
+          <li>File Company taxes</li><button>Remove</button>
+        </div>
+      </ul>
+
     </div>
   );
 }
