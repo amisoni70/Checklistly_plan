@@ -11,18 +11,27 @@
     border-radius: 10px;
 }
   
-  .login-form {
+.login-form {
     display: flex;
     flex-direction: column;
 }
   
-  .login-form input {
+.login-form input {
     margin: 10px 0;
     padding: 10px;
 }
   
-  button {
+button {
     padding: 10px;
     margin-top: 10px;
     cursor: pointer;
+    background-color: #C21E56;
+    color: #ffffff;
+    border: 3px;
+    font-weight: bold;
+    border: 5px solid #FFF5EE;
+}
+
+button:hover {
+    background-color: green;
 }
