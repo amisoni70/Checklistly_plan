@@ -28,17 +28,19 @@ const handleAdd = () => {
       onChange={(e) => setTodo(e.target.value)}
       />
       <button onClick={handleAdd}>Add task</button>
-      {/* static way of listing items in My tasks container */}
-      <ul className='container'>
-        <h2>My Tasks</h2>
-        <div className='list-container'>
-          <li>Do laundry</li><button>Remove</button>
-          <li>Go Grocery shopping</li><button>Remove</button>
-          <li>Finish ALX assignments</li><button>Remove</button>
-          <li>File Company taxes</li><button>Remove</button>
-        </div>
-      </ul>
 
+      {/* Mapping a new Todo to existing Todos in the My tasks container */}
+      <ul className="container">
+        <h2>My Tasks</h2>
+        {todos.map((todo) => {
+          return (
+            <div className="list-container">
+              <li>{todo.text}</li>
+              <button>Remove</button>
+            </div>
+          );
+        })}
+      </ul>
     </div>
   );
 }
