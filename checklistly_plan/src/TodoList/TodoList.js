@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import "./TodoList.css";
 
 function TodoList({ user }) {
 
@@ -7,9 +8,9 @@ const [todo, setTodo] = useState("");
 // List of existing Todos that will be displayed in the "My tasks" container
 const [todos, setTodos] = useState([
   {text: "Do laundry", id:1, completed: false },
-  {text: "Go Grocery Shopping", id:1, completed: false },
-  {text: "Finish ALX assignments", id:1, completed: false },
-  {text: "File company taxes", id:1, completed: false },
+  {text: "Go Grocery Shopping", id:2, completed: false },
+  {text: "Finish ALX assignments", id:3, completed: false },
+  {text: "File company taxes", id:4, completed: false },
 ]);
 
 // This function adds a new Todo task onto the exisiting todos

@@ -3,7 +3,7 @@
 }
 
 .App-footer {
-    border-top: 3px solid var(--color-brand);
+    border-top: 3px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -11,4 +11,7 @@
     bottom: 0;
     font-style: italic;
     font-weight: bold;
+    position: fixed;
+    background-color: var(--color-brand);
+    color: #ffffff;
 }
