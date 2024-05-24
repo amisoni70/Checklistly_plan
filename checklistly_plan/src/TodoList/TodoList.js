@@ -13,10 +13,17 @@ const [todos, setTodos] = useState([
   {text: "File company taxes", id:4, completed: false },
 ]);
 
-// This function adds a new Todo task onto the exisiting todos
+// This function adds a new Todo task onto the exisiting todos & clears it using the empty string
 const handleAdd = () => {
   setTodos([...todos, { text: todo, id: Date.now(), completed: false }]);
-    setTodo("");
+  setTodo("");  
+};
+
+//This function removes a task from the Todo list
+const handleRemove = (deleteId) => {
+
+  const updatedList = todos.filter((todo) => todo.id !== deleteId);
+    setTodos(updatedList);
 };
 
   return (
@@ -28,16 +35,16 @@ const handleAdd = () => {
       value={todo}
       onChange={(e) => setTodo(e.target.value)}
       />
-      <button onClick={handleAdd}>Add task</button>
+      <button className="TodoList-button" onClick={handleAdd}>Add task</button>
 
-      {/* Mapping a new Todo to existing Todos in the My tasks container */}
-      <ul className="container">
+      <ul className="TodoList-container">
         <h2>My Tasks</h2>
+        {/* Mapping a new Todo to existing Todos in the My tasks container */}
         {todos.map((todo) => {
           return (
-            <div className="list-container">
+            <div className="Todolist-container">
               <li>{todo.text}</li>
-              <button>Remove</button>
+              <button className="TodoList-button" onClick={() =>handleRemove(todo.id)}>Remove</button>
             </div>
           );
         })}
