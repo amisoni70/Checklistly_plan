@@ -5,6 +5,8 @@ function TodoList({ user }) {
 
 const [todo, setTodo] = useState("");
 
+const [completedList, setCompletedList] = useState([]);
+
 // List of existing Todos that will be displayed in the "My tasks" container
 const [todos, setTodos] = useState([
   {text: "Do laundry", id:1, completed: false },
@@ -19,11 +21,14 @@ const handleAdd = () => {
   setTodo("");  
 };
 
-//This function removes a task from the Todo list
+// This function removes a task from my tasks and shows it in the completed tasks
 const handleRemove = (deleteId) => {
 
   const updatedList = todos.filter((todo) => todo.id !== deleteId);
     setTodos(updatedList);
+  
+  const deletedTodo = todos.find((todo) => todo.id === deleteId);
+    setCompletedList([...completedList, deletedTodo]);
 };
 
   return (
@@ -42,12 +47,22 @@ const handleRemove = (deleteId) => {
         {/* Mapping a new Todo to existing Todos in the My tasks container */}
         {todos.map((todo) => {
           return (
-            <div className="Todolist-container">
+            <div className="TodoList-list-container">
               <li>{todo.text}</li>
               <button className="TodoList-button" onClick={() =>handleRemove(todo.id)}>Remove</button>
             </div>
           );
         })}
+      </ul>
+
+      <ul className="TodoList-container">
+        <h2>Completed Tasks</h2>
+        {/* Showing the removed tasks from my tasks into the completed tasks */}
+        {completedList.map((todo) => (
+          <div key={todo.id} className="TodoList-list-container">
+            <li style={{ textDecoration: "line-through" }}>{todo.text}</li>
+          </div>
+        ))}
       </ul>
     </div>
   );
