@@ -3,17 +3,20 @@ import "./TodoList.css";
 
 function TodoList({ user }) {
 
-const [todo, setTodo] = useState("");
+// Defining my states
 
+const [todo, setTodo] = useState("");
 const [completedList, setCompletedList] = useState([]);
 
-// List of existing Todos that will be displayed in the "My tasks" container
 const [todos, setTodos] = useState([
   {text: "Do laundry", id:1, completed: false },
   {text: "Go Grocery Shopping", id:2, completed: false },
   {text: "Finish ALX assignments", id:3, completed: false },
   {text: "File company taxes", id:4, completed: false },
 ]);
+
+const [editIndex, setEditIndex] = useState(null);
+const [editedTodo, setEditedTodo] = useState("");
 
 // This function adds a new Todo task onto the exisiting todos & clears it using the empty string
 const handleAdd = () => {
@@ -42,6 +45,13 @@ const handleChecked = (checkedId) => {
   setTodos(updatedList);
 };
 
+// This function edits a specific task and saves the new edited task
+
+const handleEdit = (editId) => {
+  setEditIndex(editId);
+  setEditedTodo(todos.find((todo) => todo.id === editId).text);
+};
+
   return (
     <div>
       <h2>{user}'s Todo List</h2>
@@ -59,12 +69,19 @@ const handleChecked = (checkedId) => {
         {todos.map((todo) => {
           return (
             <div className="TodoList-list-container">
-              {todo.completed ? (
+              {editIndex === todo.id ? (
+              <input
+                type="text"
+                value={editedTodo}
+                onChange={(e) => setEditedTodo(e.target.value)}
+              />
+            ) : todo.completed ? (
               <li style= {{ textDecoration: "line-through" }}>{todo.text}</li>
         ) : (
               <li>{todo.text}</li>
         )}
               <input type="checkbox"  onChange={() => handleChecked(todo.id)}/>
+              <button className="TodoList-button" onClick={() => handleEdit(todo.id)}>Edit</button>
               <button className="TodoList-button" onClick={() =>handleRemove(todo.id)}>Remove</button>
             </div>
           );
