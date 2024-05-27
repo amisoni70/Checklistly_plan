@@ -56,7 +56,8 @@ const handleEdit = (editId) => {
     <div>
       <h2>{user}'s Todo List</h2>
       {/* Adding a Task in the input field */}
-      <input
+      <input 
+      className="TodoList-input1"
       type="text"
       value={todo}
       onChange={(e) => setTodo(e.target.value)}
@@ -71,6 +72,7 @@ const handleEdit = (editId) => {
             <div className="TodoList-list-container">
               {editIndex === todo.id ? (
               <input
+                className="TodoList-input2"
                 type="text"
                 value={editedTodo}
                 onChange={(e) => setEditedTodo(e.target.value)}
@@ -82,7 +84,7 @@ const handleEdit = (editId) => {
         )}
               <input type="checkbox"  onChange={() => handleChecked(todo.id)}/>
               <button className="TodoList-button" onClick={() => handleEdit(todo.id)}>Edit</button>
-              <button className="TodoList-button" onClick={() =>handleRemove(todo.id)}>Remove</button>
+              <button className="TodoList-button" onClick={() =>handleRemove(todo.id)}>Done</button>
             </div>
           );
         })}
