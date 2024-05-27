@@ -31,6 +31,17 @@ const handleRemove = (deleteId) => {
     setCompletedList([...completedList, deletedTodo]);
 };
 
+// This function ticks the uncompleted task and marks it as completed
+
+const handleChecked = (checkedId) => {
+  const updatedList = todos.map((todo) => {
+    return todo.id === checkedId
+    ? { ...todo, completed: !todo.completed}
+    : todo
+  });
+  setTodos(updatedList);
+};
+
   return (
     <div>
       <h2>{user}'s Todo List</h2>
@@ -48,7 +59,12 @@ const handleRemove = (deleteId) => {
         {todos.map((todo) => {
           return (
             <div className="TodoList-list-container">
+              {todo.completed ? (
+              <li style= {{ textDecoration: "line-through" }}>{todo.text}</li>
+        ) : (
               <li>{todo.text}</li>
+        )}
+              <input type="checkbox"  onChange={() => handleChecked(todo.id)}/>
               <button className="TodoList-button" onClick={() =>handleRemove(todo.id)}>Remove</button>
             </div>
           );
@@ -60,7 +76,7 @@ const handleRemove = (deleteId) => {
         {/* Showing the removed tasks from my tasks into the completed tasks */}
         {completedList.map((todo) => (
           <div key={todo.id} className="TodoList-list-container">
-            <li style={{ textDecoration: "line-through" }}>{todo.text}</li>
+            <li style={{ color: "green", fontWeight: "bold" }}>{todo.text}</li>
           </div>
         ))}
       </ul>

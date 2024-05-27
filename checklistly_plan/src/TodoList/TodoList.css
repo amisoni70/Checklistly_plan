@@ -37,7 +37,3 @@ li {
     width: 85%;
     list-style-type: none;
 }
-
-.list-striked {
-    text-decoration-line: line-through;
-}
