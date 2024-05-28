@@ -52,6 +52,17 @@ const handleEdit = (editId) => {
   setEditedTodo(todos.find((todo) => todo.id === editId).text);
 };
 
+// This function saves the new edited task
+
+const handleSave = (saveId) => {
+    const updatedList = todos.map((todo) =>
+      todo.id === saveId ? { ...todo, text: editedTodo } : todo
+    );
+    setTodos(updatedList);
+    setEditIndex(null);
+    setEditedTodo("");
+};
+
   return (
     <div>
       <h2>{user}'s Todo List</h2>
@@ -84,6 +95,7 @@ const handleEdit = (editId) => {
         )}
               <input type="checkbox"  onChange={() => handleChecked(todo.id)}/>
               <button className="TodoList-button" onClick={() => handleEdit(todo.id)}>Edit</button>
+              <button className="TodoList-button" onClick={() => handleSave(todo.id)}>Save</button>
               <button className="TodoList-button" onClick={() =>handleRemove(todo.id)}>Done</button>
             </div>
           );
