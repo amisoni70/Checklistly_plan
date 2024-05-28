@@ -23,12 +23,18 @@ const handleEmailChange = (e) => {
   }
 };
 
+const isValidEmail = () => {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+};
+
 return (
     <div className="login-container">
       <h1>Welcome</h1>
       <p>Nothing acts faster than a TO-DO List!</p>
       <div className="login-form">
         <label htmlFor="email">Email: </label>
+        <div style={{ display: 'flex', alignItems: 'center' }}>
         <input 
           id="email"
           type="email" 
@@ -36,6 +42,8 @@ return (
           value={email} 
           onChange={handleEmailChange}
         />
+        {isValidEmail() && <span style={{ color: 'green', marginLeft: '5px' }}>&#9989;</span>}
+        </div>
         {emailError && <p style={{ color: 'red', fontWeight: 'bold' }}>{emailError}</p>}
         <label htmlFor="password">Password: </label>
         <input
