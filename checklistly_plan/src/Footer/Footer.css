@@ -11,7 +11,7 @@
     bottom: 0;
     font-style: italic;
     font-weight: bold;
-    position: fixed;
     background-color: var(--color-brand);
     color: #ffffff;
+    height: 50px;
 }
