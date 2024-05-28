@@ -111,6 +111,8 @@ const handleSave = (saveId) => {
           </div>
         ))}
       </ul>
+
+      <button className="TodoList-button">Logout</button>
     </div>
   );
 }
