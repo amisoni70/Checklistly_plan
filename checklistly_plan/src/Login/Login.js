@@ -5,11 +5,22 @@ import "./Login.css";
 function Login({isLoggedIn}) {
     const [email, setEmail] = useState('');   //defines the email variable
     const [password, setPassword] = useState('');   //defines the password variable
+    const [emailError, setEmailError] = useState(''); //defines the error in the email input 
 
-
-// Event handler function called when the user clicks the isLoggedIn function passed as a prop
+// Event handler functions
 const handleLogin = () => {
     isLoggedIn(email);
+};
+
+const handleEmailChange = (e) => {
+  const inputEmail = e.target.value;
+  setEmail(inputEmail);
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (inputEmail !== '' && !emailRegex.test(inputEmail)) {
+      setEmailError('Please enter a valid email address');
+  } else {
+      setEmailError('');
+  }
 };
 
 return (
@@ -23,8 +34,9 @@ return (
           type="email" 
           placeholder="User Name" 
           value={email} 
-          onChange={(e) => setEmail(e.target.value)} 
+          onChange={handleEmailChange}
         />
+        {emailError && <p style={{ color: 'red', fontWeight: 'bold' }}>{emailError}</p>}
         <label htmlFor="password">Password: </label>
         <input
           id="password" 
