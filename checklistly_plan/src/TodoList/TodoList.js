@@ -18,6 +18,15 @@ const [todos, setTodos] = useState([
 const [editIndex, setEditIndex] = useState(null);
 const [editedTodo, setEditedTodo] = useState("");
 
+// Defining my functions
+
+//This function extracts the username from the email address for a better UI
+
+const getUser = (email) => {
+  return email.split('@')[0];
+};
+
+
 // This function adds a new Todo task onto the exisiting todos & clears it using the empty string
 const handleAdd = () => {
   setTodos([...todos, { text: todo, id: Date.now(), completed: false }]);
@@ -65,7 +74,7 @@ const handleSave = (saveId) => {
 
   return (
     <div>
-      <h2>{user}'s Todo List</h2>
+      <h2>{getUser(user)}'s Todo List</h2>
       {/* Adding a Task in the input field */}
       <input 
       className="TodoList-input1"
