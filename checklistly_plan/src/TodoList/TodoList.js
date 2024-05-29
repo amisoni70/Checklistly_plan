@@ -26,7 +26,6 @@ const getUser = (email) => {
   return email.split('@')[0];
 };
 
-
 // This function adds a new Todo task onto the exisiting todos & clears it using the empty string
 const handleAdd = () => {
   setTodos([...todos, { text: todo, id: Date.now(), completed: false }]);
