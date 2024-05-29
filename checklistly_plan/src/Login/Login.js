@@ -41,6 +41,10 @@ const handlePasswordChange = (e) => {
   }
 };
 
+const isValidPassword = () => {
+  return password.length === 8;
+};
+
 return (
     <div className="login-container">
       <h1>Welcome</h1>
@@ -59,6 +63,7 @@ return (
         </div>
         {emailError && <p style={{ color: 'red', fontWeight: 'bold' }}>{emailError}</p>}
         <label htmlFor="password">Password: </label>
+        <div style={{ display: 'flex', alignItems: 'center' }}>
         <input
           id="password" 
           type="password" 
@@ -66,6 +71,8 @@ return (
           value={password} 
           onChange={handlePasswordChange} 
         />
+        {isValidPassword() && <span style={{ color: 'green', marginLeft: '5px' }}>&#9989;</span>}
+        </div>
         {passwordError && <p style={{ color: 'red', fontWeight: 'bold' }}>{passwordError}</p>}
         <button onClick={handleLogin}>LOGIN</button>
       </div>
