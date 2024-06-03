@@ -6,6 +6,10 @@ html, body {
   flex-direction: column;
 }
 
+body {
+  background-color: antiquewhite;
+}
+
 .App {
   text-align: center;
   flex: 1;

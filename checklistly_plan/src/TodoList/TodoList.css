@@ -1,5 +1,10 @@
+:root {
+    --color-brand1: #FAA0A0;
+    --color-brand4: #F3CFC6;
+}
+
 .TodoList-container {
-    background-color: #FAA0A0;
+    background-color: var(--color-brand1);
     border-radius: 0.5rem;
     width: 50%;
     margin: 1rem auto;
@@ -19,7 +24,7 @@
     border-radius: 1rem;
     margin-left: 2rem;
     margin-right: 2rem;
-    background-color: #F3CFC6;
+    background-color: var(--color-brand4);
     margin-left: 2rem;
     padding: 10px;
     margin: 0.5rem;
@@ -38,16 +43,16 @@ li {
 
 .TodoList-input1 {
     width: 30%;
-    background-color: #F3CFC6;
-    border: 2px solid #F3CFC6;
+    background-color: var(--color-brand4);
+    border: 2px solid var(--color-brand4);
     padding: 5px;
     border-radius: 4px;
     outline: none;
 }
 
 .TodoList-input2 {
-    background-color: #FAA0A0;
-    border: 2px solid #FAA0A0;
+    background-color: var(--color-brand1);
+    border: 2px solid var(--color-brand1);
     outline: none;
     width: auto;
     margin: 0 auto;
@@ -71,5 +76,5 @@ li {
 }
 
 .TodoList-button:hover {
-    background-color: #FAA0A0;
+    background-color: var(--color-brand1);
 }
