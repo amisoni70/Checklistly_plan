@@ -78,3 +78,7 @@ li {
 .TodoList-button:hover {
     background-color: var(--color-brand1);
 }
+
+h2 {
+    color: #C21E56;
+}

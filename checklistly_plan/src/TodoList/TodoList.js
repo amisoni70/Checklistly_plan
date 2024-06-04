@@ -8,10 +8,10 @@ function TodoList({ user }) {
   const [completedList, setCompletedList] = useState([]);
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [todos, setTodos] = useState([
-    { text: "Do laundry", id: 1, completed: false, date: new Date().toLocaleDateString() },
-    { text: "Go Grocery Shopping", id: 2, completed: false, date: new Date().toLocaleDateString() },
-    { text: "Finish ALX assignments", id: 3, completed: false, date: new Date().toLocaleDateString() },
-    { text: "File company taxes", id: 4, completed: false, date: new Date().toLocaleDateString() },
+    { date: new Date().toLocaleDateString(), text: "Do laundry", id: 1, completed: false },
+    { date: new Date().toLocaleDateString(), text: "Go Grocery Shopping", id: 2, completed: false },
+    { date: new Date().toLocaleDateString(), text: "Finish ALX assignments", id: 3, completed: false },
+    { date: new Date().toLocaleDateString(), text: "File company taxes", id: 4, completed: false },
   ]);
 
   const [editIndex, setEditIndex] = useState(null);
@@ -69,7 +69,6 @@ const handleSave = (saveId) => {
 const handleDateChange = (date) => {
     setSelectedDate(date);
 };
-
 
 // This is a function filters the tasks based on the specific date picked
 const filteredTodos = todos.filter(todo => {

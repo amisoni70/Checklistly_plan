@@ -71,7 +71,7 @@ return (
           value={password} 
           onChange={handlePasswordChange} 
         />
-        {isValidPassword() && <span style={{ color: 'green', marginLeft: '5px' }}>&#9989;</span>}
+        {isValidPassword() && <span style={{ color: 'pink', marginLeft: '5px' }}>&#9989;</span>}
         </div>
         {passwordError && <p style={{ color: 'red', fontWeight: 'bold' }}>{passwordError}</p>}
         <button onClick={handleLogin}>LOGIN</button>
