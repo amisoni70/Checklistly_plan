@@ -16,11 +16,20 @@
 .login-form {
     display: flex;
     flex-direction: column;
+    font-weight: bold;
+    color: #C21E56;
 }
   
 .login-form input {
     margin: 10px 0;
     padding: 10px;
+    border-color: #ffffff;
+    border-radius: 5px;
+}
+
+.login-form input:focus {
+    border-color: #C21E56;
+    outline: none;
 }
   
 button {
@@ -41,4 +50,9 @@ button:hover {
 h1 {
     font-family: 'Lucida Handwriting', cursive;
     color: #C21E56;
+}
+
+.slogan {
+    font-weight: bold;
+    color:#C21E56;
 }

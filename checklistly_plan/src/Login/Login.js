@@ -48,7 +48,7 @@ const isValidPassword = () => {
 return (
     <div className="login-container">
       <h1>Welcome</h1>
-      <p>Nothing acts faster than a TO-DO List!</p>
+      <p className="slogan">Nothing acts faster than a TO-DO List!</p>
       <div className="login-form">
         <label htmlFor="email">Email: </label>
         <div style={{ display: 'flex', alignItems: 'center' }}>
