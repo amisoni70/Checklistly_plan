@@ -6,7 +6,7 @@
     height: 65vh;
     width: 700px;
     margin: auto;
-    background-color: #F2D2BD;
+    background-image: url(../images/login_container.jpg);
     border: 5px solid #F88379;
     border-radius: 10px;
     margin-bottom: 50px;
@@ -36,4 +36,9 @@ button {
 
 button:hover {
     background-color: green;
+}
+
+h1 {
+    font-family: 'Lucida Handwriting', cursive;
+    color: #C21E56;
 }
