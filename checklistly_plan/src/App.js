@@ -12,10 +12,14 @@ function App() {
     setUser(username);
   };
 
+  const handleLogout = () => {
+    setUser(null);
+  };
+
   return (
     <div className="App">
       <Header />
-      {user ? <TodoList user={user} /> : <Login isLoggedIn={handleLogin} />}
+      {user ? <TodoList user={user} onLogout={handleLogout}/> : <Login isLoggedIn={handleLogin} />}
       <Footer />
     </div>
   );

@@ -3,7 +3,7 @@ import "./TodoList.css";
 import TodoCalendar from '../Calendar/Calendar';
 
 // Defining my states
-function TodoList({ user }) {
+function TodoList({ user, onLogout }) {
   const [todo, setTodo] = useState("");
   const [completedList, setCompletedList] = useState([]);
   const [selectedDate, setSelectedDate] = useState(new Date());
@@ -122,7 +122,7 @@ const filteredTodos = todos.filter(todo => {
         ))}
       </ul>
 
-      <button className="TodoList-button">Logout</button>
+      <button className="TodoList-button" onClick={onLogout}>Logout</button>
     </div>
   );
 }
