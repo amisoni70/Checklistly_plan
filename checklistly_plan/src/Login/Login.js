@@ -31,13 +31,11 @@ const isValidEmail = () => {
 
 const handlePasswordChange = (e) => {
   const inputPassword = e.target.value;
-  if (inputPassword.length <= 8) {
-      setPassword(inputPassword);
-      if (inputPassword.length < 8) {
-          setPasswordError('Password must be exactly 8 characters');
-      } else {
-          setPasswordError('');
-      }
+  setPassword(inputPassword);
+  if (inputPassword.length < 8) {
+    setPasswordError('Password must be a min of 8 characters');
+  } else {
+    setPasswordError('');
   }
 };
 
