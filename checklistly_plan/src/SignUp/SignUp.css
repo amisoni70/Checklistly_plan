@@ -1,4 +1,4 @@
-.login-container {
+.signup-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -13,28 +13,28 @@
     margin-top: 10px;
 }
   
-.login-form {
+.signup-form {
     display: flex;
     flex-direction: column;
     font-weight: bold;
     color: #C21E56;
 }
   
-.login-form input {
+.signup-form input {
     margin: 10px 0;
     padding: 10px;
     border-color: #ffffff;
     border-radius: 5px;
 }
 
-.login-form input:focus {
+.signup-form input:focus {
     border-color: #C21E56;
     outline: none;
 }
   
 button {
-    padding: 10px;
-    margin-top: 10px;
+    padding: 8px;
+    margin-top: 3px;
     cursor: pointer;
     background-color: #C21E56;
     color: #ffffff;
@@ -50,14 +50,4 @@ button:hover {
 h1 {
     font-family: 'Lucida Handwriting', cursive;
     color: #C21E56;
-}
-
-.slogan {
-    font-weight: bold;
-    color:#C21E56;
-}
-
-.phrase {
-    font-size: small;
-    cursor: pointer;
 }
