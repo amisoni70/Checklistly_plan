@@ -5,8 +5,9 @@
   more organized and focused on their daily tasks enabling them to conquer the day!
 
 # Features
-* Login: This feature allows the user to login using their email address enabling them to have a
-  more personalized experience.
+* Sign up: This feature allows the user to create an account using the email address that they've provided.
+* Login: This feature allows the user to login to their account enabling them to have a more personalized
+  experience and have access to the application.
 * Calendar: This feature enables the user to customize their tasks based on a specific date
   that would be selected.
 * Add Task: This feature enables a user to add a task that they aspire to accomplish.
