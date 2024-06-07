@@ -49,7 +49,6 @@ button:hover {
     background-color: green;
 }
 
-h1 {
-    font-family: 'Lucida Handwriting', cursive;
+.h1 {
     color: #C21E56;
 }
