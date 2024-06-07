@@ -97,7 +97,7 @@ function SignUp({ onSignUp, onToggle }) {
           {passwordsMatch() && <span style={{ color: 'green', marginLeft: '5px' }}>&#9989;</span>}
         </div>
         {confirmPasswordError && <p style={{ color: 'red', fontWeight: 'bold' }}>{confirmPasswordError}</p>}
-        <button onClick={onToggle}>SIGN UP</button>
+        <button className="signup-button" onClick={onToggle}>SIGN UP</button>
       </div>
     </div>
   );
